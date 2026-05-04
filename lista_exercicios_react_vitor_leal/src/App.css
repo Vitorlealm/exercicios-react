@@ -71,3 +71,9 @@ h1 {
   cursor: pointer;
   accent-color: #4a90e2;
 }
+
+.produtos-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 15px;
+}

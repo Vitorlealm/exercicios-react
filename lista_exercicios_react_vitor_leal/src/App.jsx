@@ -3,6 +3,8 @@ import "./App.css";
 import NumeroInfo from "./components/NumeroInfo/NumeroInfo";
 import StatusUsuario from "./components/StatusUsuario/StatusUsuario";
 import ClassificacaoNota from "./components/ClassificacaoNota/ClassificacaoNota";
+import Produto from "./components/Produto/Produto";
+import PainelResumo from "./components/PainelResumo/PainelResumo";
 
 function App() {
   const [numero, setNumero] = useState(null);
@@ -11,6 +13,11 @@ function App() {
     ativo: false,
   });
   const [nota, setNota] = useState(null);
+  const [produtos, setProdutos] = useState([
+    { id: 1, nome: "Notebook", quantidade: 5 },
+    { id: 2, nome: "Mouse", quantidade: 0 },
+    { id: 3, nome: "Teclado", quantidade: 3 },
+  ]);
 
   const handleInputChange = (e) => {
     setNumero(Number(e.target.value) || 0);
@@ -89,6 +96,30 @@ function App() {
             />
           </div>
           {nota && <ClassificacaoNota nota={nota} />}
+        </div>
+
+        <div className="container-exercicio">
+          <h1>Exercício 4: Produto em Estoque</h1>
+          <div className="produtos-container">
+            {produtos.map((produto) => (
+              <Produto
+                key={produto.id}
+                nome={produto.nome}
+                quantidade={produto.quantidade}
+              />
+            ))}
+          </div>
+        </div>
+
+        <div className="container-exercicio">
+          <h1>Exercício 5: Desafio Integrador</h1>
+          <PainelResumo
+            numero={numero}
+            estadoUsuario={estadoUsuario}
+            handleInputChange={handleInputChange}
+            handleNomeChange={handleNomeChange}
+            handleAtivoToggle={handleAtivoToggle}
+          />
         </div>
       </div>
     </>

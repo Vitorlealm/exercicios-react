@@ -1,4 +1,10 @@
 # exercicios-react
+
+PARA RODAR A APLICAÇÃO VITE:
+Clonar repositorio e no terminal na pasta raiz em "lista_exercicios_react_vitor_leal" instalar as dependencias com "npm install" e depois para rodar "npm run dev".
+
+DESCRIÇÃO DA ATIVIDADE
+
 Exercício 1 – Par, Ímpar ou Zero (2,0 pontos)
 Descrição
 Crie um componente chamado NumeroInfo.jsx que receba uma prop chamada numero.
@@ -22,7 +28,6 @@ Número recebido: 7 → Ímpar
 Exercício 2 – Status de Usuário (2,0 pontos)
 Descrição
 Crie um componente chamado StatusUsuario.jsx.
-
 
 Requisitos
 Se o usuário estiver ativo:

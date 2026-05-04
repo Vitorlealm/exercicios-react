@@ -1,0 +1,37 @@
+.classificacao-nota {
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.classificacao-nota p {
+  margin: 0;
+}
+
+.nota-excelente {
+  background-color: #d1e7dd;
+  color: #0f5132;
+  border-left: 5px solid #198754;
+}
+
+.nota-bom {
+  background-color: #cfe2ff;
+  color: #084298;
+  border-left: 5px solid #0d6efd;
+}
+
+.nota-regular {
+  background-color: #fff3cd;
+  color: #664d03;
+  border-left: 5px solid #ffc107;
+}
+
+.nota-insuficiente {
+  background-color: #f8d7da;
+  color: #721c24;
+  border-left: 5px solid #dc3545;
+}

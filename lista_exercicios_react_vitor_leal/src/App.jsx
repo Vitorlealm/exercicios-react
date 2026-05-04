@@ -2,13 +2,15 @@ import { useState } from "react";
 import "./App.css";
 import NumeroInfo from "./components/NumeroInfo/NumeroInfo";
 import StatusUsuario from "./components/StatusUsuario/StatusUsuario";
+import ClassificacaoNota from "./components/ClassificacaoNota/ClassificacaoNota";
 
 function App() {
-  const [numero, setNumero] = useState(0);
+  const [numero, setNumero] = useState(null);
   const [estadoUsuario, setEstadoUsuario] = useState({
     nome: "",
     ativo: false,
   });
+  const [nota, setNota] = useState(null);
 
   const handleInputChange = (e) => {
     setNumero(Number(e.target.value) || 0);
@@ -20,6 +22,10 @@ function App() {
 
   const handleAtivoToggle = () => {
     setEstadoUsuario({ ...estadoUsuario, ativo: !estadoUsuario.ativo });
+  };
+
+  const handleNotaChange = (e) => {
+    setNota(Number(e.target.value) || 0);
   };
 
   return (
@@ -37,7 +43,7 @@ function App() {
               placeholder="Digite um número"
             />
           </div>
-          <NumeroInfo numero={numero} />
+          {numero && numero !== 0 && <NumeroInfo numero={numero} />}
         </div>
 
         <div className="container-exercicio">
@@ -66,6 +72,23 @@ function App() {
           {estadoUsuario.nome && (
             <StatusUsuario estadoUsuario={estadoUsuario} />
           )}
+        </div>
+
+        <div className="container-exercicio">
+          <h1>Exercício 3: Classificação de Nota</h1>
+          <div className="input-container">
+            <label htmlFor="nota-input">Digite uma nota: </label>
+            <input
+              id="nota-input"
+              type="number"
+              min="0"
+              max="10"
+              value={nota}
+              onChange={handleNotaChange}
+              placeholder="nota de 0 a 10"
+            />
+          </div>
+          {nota && <ClassificacaoNota nota={nota} />}
         </div>
       </div>
     </>
